@@ -1,4 +1,5 @@
 FROM pluswerk/php-dev:apache-7.3
 
-RUN composer global require deployer/deployer guzzle/guzzle
-RUN ln -s /root/.composer/vendor/bin/dep /usr/local/bin/dep
+RUN curl -LO https://deployer.org/deployer.phar
+RUN mv deployer.phar /usr/local/bin/dep
+RUN chmod +x /usr/local/bin/dep
